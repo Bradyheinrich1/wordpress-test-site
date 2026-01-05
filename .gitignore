@@ -1,0 +1,49 @@
+# Environment variables
+.env
+
+# WordPress core files (managed separately on server)
+wordpress/
+wp-config.php
+
+# WordPress uploads (user-generated content)
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/
+wp-content/blogs.dir/
+wp-content/upgrade/
+
+# WordPress debug log
+wp-content/debug.log
+
+# Node modules (if using build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Docker volumes (local development)
+db_data/
+wordpress_data/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Keep wp-content structure but ignore uploads
+!wp-content/
+!wp-content/themes/
+!wp-content/plugins/
+!wp-content/themes/**
+!wp-content/plugins/**
+

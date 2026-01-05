@@ -1,0 +1,25 @@
+name: Deploy to Cloudways
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Cloudways via API
+        uses: cloudways/cloudways-api-git-action@v1
+        with:
+          email: ${{ secrets.CLOUDWAYS_EMAIL }}
+          api_key: ${{ secrets.CLOUDWAYS_API_KEY }}
+          app_id: ${{ secrets.CLOUDWAYS_APP_ID }}
+          branch: ${{ github.ref_name }}
+          git_url: ${{ github.repositoryUrl }}
+
