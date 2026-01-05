@@ -40,10 +40,15 @@ wordpress_data/
 *.bak
 *.log
 
-# Keep wp-content structure but ignore uploads
+# Keep wp-content structure but ignore uploads and default themes
 !wp-content/
 !wp-content/themes/
 !wp-content/plugins/
+# Exclude default WordPress themes (they're part of core)
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentyfive/
+# Track custom themes and plugins
 !wp-content/themes/**
 !wp-content/plugins/**
 
