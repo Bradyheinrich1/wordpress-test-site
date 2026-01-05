@@ -1,0 +1,6 @@
+# Deployment Test File
+
+This file is used to test the automated deployment workflow.
+
+Created: Sun Jan  4 21:51:25 EST 2026
+Repository: https://github.com/Bradyheinrich1/wordpress-test-site
