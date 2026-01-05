@@ -11,15 +11,26 @@ A simple WordPress test site with Docker local development and automated deploym
 
 ## Local Development Setup
 
-1. **Copy environment file:**
+1. **Create environment file:**
    ```bash
-   cp .env.example .env
+   # Create .env file with default values
+   cat > .env << EOF
+   MYSQL_DATABASE=wordpress_db
+   MYSQL_USER=wordpress_user
+   MYSQL_PASSWORD=wordpress_password
+   MYSQL_ROOT_PASSWORD=root_password
+   WORDPRESS_TABLE_PREFIX=wp_
+   EOF
    ```
-
-2. **Edit `.env` file** with your preferred database credentials (optional, defaults are fine for local dev)
+   
+   Or manually create `.env` file with the database credentials above (defaults are fine for local dev)
 
 3. **Start Docker containers:**
    ```bash
+   # Try this first (newer Docker versions)
+   docker compose up -d
+   
+   # Or use this (older Docker Compose standalone)
    docker-compose up -d
    ```
 
@@ -87,11 +98,17 @@ When you push to the `main` branch, GitHub Actions will:
 ## Stopping Local Development
 
 ```bash
+# Newer Docker versions
+docker compose down
+
+# Older Docker Compose standalone
 docker-compose down
 ```
 
 To remove all data (including database):
 ```bash
+docker compose down -v
+# or
 docker-compose down -v
 ```
 
